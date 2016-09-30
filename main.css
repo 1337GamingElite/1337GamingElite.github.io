@@ -18,6 +18,7 @@ h1 {
 
 #container {
     margin: 10px;
+    overflow: hidden;
 }
 
 header {
