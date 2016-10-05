@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,7 +24,7 @@
     <!--Font from Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     
-    <title>Dank Games - About</title>
+    <title>Dank Games - Contact</title>
   </head>
 <body>
       
@@ -58,8 +62,8 @@
           </div>
         </li>  
           
-        <li><a href="#" class="active">About</a></li>
-        <li><a href="#">Contact Me</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#" class="active">Contact Me</a></li>
       </ul>
     </nav>
 
@@ -83,10 +87,33 @@
 	
     <!--Main Content-->
     <main>
-        <h1>About</h1>
+        <h1>Contact Me</h1>
         <br>
-        <h2>The Website</h2>
-        <p>This website was created to provide fun arcade games to people in one place. These arcade games are recreated versions of other popular arcade games (like Pong). <img src="images/pong.gif" alt="Pong" style="float: right; width: 250px;" title="Pong Gif | Source: https://www.orphanedgames.com/articles/Pong/images/pong.gif">The majority of these games would be coded in Javascript but some of them would be created in Scratch, which is a website made by the Massachusetts Institute of Technology, which allow people to create their own games, in a simplified programming language. These Scratch games would require Adobe Flash in order for them to be played.</p>
+        <div id="contact-form">
+            <form action="contact-email.php" method="post" name="contact-form">
+            <!--Person's Name-->
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" style="font-size: 25px;">     
+            </p>
+            <br>
+            <!--Person's Email-->
+            <p>
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" style="font-size: 25px;">   
+            </p>
+            <br>
+            <!-- The Message -->
+            <p>
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" style="font-size: 25px"></textarea>
+            </p>
+            <p>
+                <input type="submit" name="submit" id="sumbit" value="Submit" style="width: 100px; height: 100px;">
+                <input type="reset" name="reset" id="reset" value="Reset" style="width: 100px; height: 100px;">
+            </p>
+            </form>
+        </div>
     </main>
     
     <!--Copyright-->
