@@ -65,7 +65,7 @@ function generateFood() {
 // GAME FUNCTIONS
 function main() {
     // The game's main function, it starts here
-    window.alert("Testing 1...2...3... SKT WIN WORLDS!!!")
+    //window.alert("Testing 1...2...3... SKT WIN WORLDS!!!")
 }
 
 function init() {
