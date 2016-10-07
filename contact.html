@@ -91,10 +91,16 @@
         <br>
         <div id="contact-form">
             <form action="contact-email.php" method="post" name="contact-form">
-            <!--Person's Name-->
+            <!--Person's First Name-->
             <p>
-                <label for="name">Name:</label>
-                <input type="text" name="name" id="name" style="font-size: 25px;">     
+                <label for="name">First Name:</label>
+                <input type="text" name="first_name" style="font-size: 25px;">
+            </p>
+            <br>
+            <!--Person's Last Name-->
+            <p>
+                <label for="name">Last Name:</label>
+                <input type="text" name="last_name" style="font-size: 25px;">
             </p>
             <br>
             <!--Person's Email-->
@@ -103,7 +109,13 @@
                 <input type="text" name="email" id="email" style="font-size: 25px;">   
             </p>
             <br>
-            <!-- The Message -->
+            <!--Subject of the Message-->
+            <p>
+            <label for="name">Subject:</label>
+            <input type="text" name="subject" style="font-size: 25px;">
+            </p>
+            <br>
+            <!--The Message-->
             <p>
                 <label for="message">Message:</label>
                 <textarea name="message" id="message" style="font-size: 25px"></textarea>
