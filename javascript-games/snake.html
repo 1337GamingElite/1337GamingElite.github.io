@@ -2,64 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    
-    <!--Meta Keywords for search engines-->
+    <!--Meta keywords for search engines-->
     <meta name="keywords" content="Games, HTML5 Games, Javascript Games, Scratch">
     <meta name="author" content="John Marcus Mabanta">
     <meta name="description" content="A collection of cloned, vintage games.">
-      
-    <!--Allows for some responsiveness (browser size)-->
+
+    <!--Responsiveness-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-    <!-- Main CSS Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="main.css">
-      
-    <!-- Icon for the website (located by the title of the webpage) -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-      
+
+    <!-- External CSS StyleSheet -->
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    <!-- Website icon -->
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
+
+
     <!--Font from Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-    
-    <title>Dank Games</title>
+
+    <title>Dank Games - Snake</title>
   </head>
 <body>
-      
+
     <div id="container">
 	<!--Title Banner-->
     <header>
-      <a href="index.html"><img src="images/logo.png" alt="Dank Games"></a>
+      <a href="../index.html"><img src="../images/logo.png" alt="Dank Games"></a>
     </header>
 
 	<!--Navigation Bar-->
     <nav>
       <ul class="menu">
-        <li><a href="#" class="active">Home</a></li>
+        <li><a href="../index.html">Home</a></li>
 
         <!--Dropdown Menu-->
-        <li class="dropdown">
-          <a href="#" class="dropdown-button">Games</a>
+        <li class="dropdown active">
+          <a href="#" class="dropdown-button active">Games</a>
           <div class="dropdown-content">
           	<ul>
             	<li class="droplink"><a href="#">Galactic Shootout</a></li>
             	<li class="droplink"><a href="#">Breakout</a></li>
-            	<li class="droplink"><a href="javascript-games/snake.html">Snake</a></li>
+            	<li class="droplink active"><a href="#">Snake</a></li>
           	</ul>
           </div>
         </li>
-          
+
          <li class="dropdown">
           <a href="#" class="dropdown-button">Scratch Games</a>
           <div class="dropdown-content">
           	<ul>
-            	<li class="droplink"><a href="scratch-games/derpy-face.html">Derpy Face</a></li>
-            	<li class="droplink"><a href="scratch-games/click-to-win.html">Click to Win!</a></li>
-            	<li class="droplink"><a href="scratch-games/space-pong.html">Space Pong</a></li>
+            	<li class="droplink"><a href="../scratch-games/derpy-face.html">Derpy Face</a></li>
+            	<li class="droplink"><a href="../scratch-games/click-to-win.html">Click to Win!</a></li>
+            	<li class="droplink"><a href="../scratch-games/space-pong.html">Space Pong</a></li>
           	</ul>
           </div>
-        </li>  
-          
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact Me</a></li>
+        </li>
+
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact Me</a></li>
       </ul>
     </nav>
 
@@ -79,18 +79,38 @@
             <li><a href="https://scratch.mit.edu/users/1337GamingElite/" target="_blank" style="text-decoration: none; color: #98fb98;">Scratch Profile</a></li>
         </ul>
     </div>
-	
+
+
+
     <!--Main Content-->
     <main>
-        <h1>Welcome to Dank Games,</h1>
-        <p>This is a website where you can find a couple of
-        vintage arcade games, like Pong, Snake, and Breakout. These
-        games are coded in Javascript and HTML5.</p>
+        <div id="instructions">
+            <h2>How To Play</h2>
+            <br>
+                <h3>Controls:</h3>
+                <ul>
+                    <li>W - UP</li>
+                    <li>S - DOWN</li>
+                    <li>A - LEFT</li>
+                    <li>D - RIGHT</li>
+                </ul>
+            <p>(Tip: You can't move the opposite directions. Eg: Up to Down, or Left to Right, or vice versa)</p>
+            <br>
+            <p>Eat the red dots to get bigger and earn points. If you run into a wall, or run into yourself, you die and it is game over.</p>
+        </div>
+        <h1>Snake Game</h1>
+        <div id="game">
+            <script type="text/javascript" src="../mobile-device-test.js"></script>
+            <div id="game">
+                <canvas id="gameCanvas">
+                </canvas>
+                <script type="text/javascript" src="js-files/snake.js"></script>
+            </div>
+        </div>
         <br>
-        <p>I will also be featuring a couple of Scratch games that I made about a year ago. Although in order to play these Scratch games, you will need Adobe Flash installed on your computer, but you won't need Flash in order to play the Javascript/HTML5 games.</p>
+
     </main>
-    
-    <!--Copyright-->
+
     <footer>
         <h6>©2016 John M. All Rights Reserved</h6>
         <h6>Background Link:<a href="https://s-media-cache-ak0.pinimg.com/564x/e7/d3/66/e7d36669c822b2e4bae251b77e0660ce.jpg" target="_blank"> https://s-media-cache-ak0.pinimg.com/564x/e7/d3/66/e7d36669c822b2e4bae251b77e0660ce.jpg</a></h6>
