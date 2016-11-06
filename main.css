@@ -169,3 +169,8 @@ footer a {
     border: 5px solid black;
     border-radius: 25px;
 }
+
+#gameCanvas {
+    border: 5px solid black;
+    box-shadow: 5px 5px 15px black;
+}

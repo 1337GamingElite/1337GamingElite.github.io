@@ -67,7 +67,7 @@
     <div id="sidebar">
         <h2>Upcoming Features/Games:</h2>
 		<ul style="list-style-type: dot; list-style-position: inside;">
-            <li>Snake Game</li>
+            <li>Snake Game - Night Mode</li>
             <li>Breakout Game</li>
             <li>Galactic Shootout Game</li>
 		</ul>
@@ -86,13 +86,26 @@
     <main>
         <div id="instructions">
             <h2>How To Play</h2>
-                <p>(placeholder)</p>
+            <br>
+                <h3>Controls:</h3>
+                <ul>
+                    <li>W - UP</li>
+                    <li>S - DOWN</li>
+                    <li>A - LEFT</li>
+                    <li>D - RIGHT</li>
+                </ul>
+            <p>(Tip: You can't move the opposite directions. Eg: Up to Down, or Left to Right, or vice versa)</p>
+            <br>
+            <p>Eat the red dots to get bigger and earn points. If you run into a wall, or run into yourself, you die and it is game over.</p>
         </div>
         <h1>Snake Game</h1>
-        <h5>(work in progresss)</h5>
         <div id="game">
             <script type="text/javascript" src="../mobile-device-test.js"></script>
-            <script type="text/javascript" src="js-files/snake.js"></script>
+            <div id="game">
+                <canvas id="gameCanvas">
+                </canvas>
+                <script type="text/javascript" src="js-files/snake.js"></script>
+            </div>
         </div>
         <br>
 
