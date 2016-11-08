@@ -108,7 +108,7 @@ function main(id) {
 function init() {
 	score = 0;
 	grid.init(EMPTY, COLS, ROWS);
-	var sp = {x:Math.floor(COLS/2), y:ROWS-1};
+	var sp = {x:Math.floor(COLS/2), y:ROWS-5};
 	snake.init(UP, sp.x, sp.y);
 	grid.set(SNAKE, sp.x, sp.y);
 	setFood();
@@ -116,11 +116,10 @@ function init() {
 
 function gameOver() {
     var gameOverMessage = confirm("Congrats, You have gotten " + score + " points. Do you want to continue?");
-    if (gameOverMessage) {
-        init();
-    } else {
+    if (!gameOverMessage) {
         window.location = "../../index.html";
     }
+    init();
 }
 
 // Loops throuch update and draw functions
@@ -173,6 +172,7 @@ function update() {
 			0 > ny || ny > grid.height-1 ||
 			grid.get(nx, ny) === SNAKE
 		) {
+            //return init(); /*Use for live previewing*/
 			return gameOver();
 		}
 		// Check whether the new position are on the fruit item
