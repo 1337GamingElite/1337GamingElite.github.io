@@ -193,6 +193,7 @@ table, th, td {
     border-collapse: collapse;
     padding: 5px;
     width: 50%;
+    box-shadow: 2px 2px 15px black;
 }
 
 .popupBoxWrapper{
