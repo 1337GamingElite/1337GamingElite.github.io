@@ -8,10 +8,16 @@ var EMPTY = 0, SNAKE = 1, FRUIT = 2;
 var LEFT  = 0, UP = 1, RIGHT = 2, DOWN = 3;
 
 // Keys
-var KEY_LEFT = 65, KEY_UP = 87, KEY_RIGHT = 68, KEY_DOWN = 83;
+var KEY_LEFT = 65, KEY_UP = 87, KEY_RIGHT = 68, KEY_DOWN = 83, PAUSE_KEY = 80;
 
 // Game Variables
 var canvas, ctx, keystate, frames, score;
+
+//Pause Count
+var pauseCount = 3;
+
+//Nightmode
+var nightMode = false;
 
 var grid = {
 	width: null,  // Number of Columns
@@ -107,6 +113,7 @@ function main(id) {
 // Resets or Sets game objects
 function init() {
 	score = 0;
+    pauseCount = 3;
 	grid.init(EMPTY, COLS, ROWS);
 	var sp = {x:Math.floor(COLS/2), y:ROWS-5};
 	snake.init(UP, sp.x, sp.y);
@@ -202,13 +209,25 @@ function draw() {
 			// Sets the cell colour
 			switch (grid.get(x, y)) {
 				case EMPTY:
-					ctx.fillStyle = "#fff";
+                    if (nightMode) {
+                        ctx.fillStyle = "#000";
+                    } else if (!nightMode) {
+					   ctx.fillStyle = "#fff";
+                    }
 					break;
 				case SNAKE:
-					ctx.fillStyle = "#00f";
+                    if (nightMode) {
+                        ctx.fillStyle = "chartreuse";
+                    } else if (!nightMode) {
+					   ctx.fillStyle = "#00f";
+                    }
 					break;
 				case FRUIT:
-					ctx.fillStyle = "#f00";
+                    if (nightMode) {
+                        ctx.fillStyle = "#fff"
+                    } else if (!nightMode) {
+					   ctx.fillStyle = "#f00";
+                    }
 					break;
 			}
 			ctx.fillRect(x*tw, y*th, tw, th);
@@ -216,8 +235,35 @@ function draw() {
 	}
 	// changes the fillstyle once more and draws the score
 	// message to the canvas
-	ctx.fillStyle = "#000";
+    if (nightMode) {
+        ctx.fillStyle = "darkorchid"
+    } else if (!nightMode) {
+	   ctx.fillStyle = "#000";
+    }
 	ctx.fillText("SCORE: " + score, 10, canvas.height - 10);
+    ctx.fillText("PAUSES: " + pauseCount, canvas.width - 115, canvas.height - 10);
 }
 
-main("game");
+function pauseGame() {
+    if (pauseCount > 0) {
+        pauseCount--;
+        window.alert("The game has been paused. You now have " + pauseCount + " pauses left.");
+    }
+}
+
+function toggleNightMode() {
+    nightMode = !nightMode
+    if (nightMode) {
+        document.getElementById("nightMode").style.color = "white";
+        document.getElementById("nightMode").style.backgroundColor = "black";
+        document.getElementById("nightMode").value = "NightMode - On"
+        document.getElementById("gameCanvas").style.border = "5px solid darkorchid";
+        document.getElementById("gameCanvas").style.boxShadow = "2px 2px 15px darkorchid";
+    } else if (!nightMode) {
+        document.getElementById("nightMode").style.color = "black";
+        document.getElementById("nightMode").style.backgroundColor = "white";
+        document.getElementById("nightMode").value = "NightMode - Off"
+        document.getElementById("gameCanvas").style.border = "5px solid black";
+        document.getElementById("gameCanvas").style.boxShadow = "2px 2px 15px black";
+    }
+}

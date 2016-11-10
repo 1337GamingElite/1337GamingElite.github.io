@@ -20,6 +20,9 @@
     <!--Font from Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 
+    <!--Snake Game-->
+    <script type="text/javascript" src="js-files/snake.js"></script>
+
     <title>Dank Games - Snake</title>
   </head>
 <body>
@@ -67,7 +70,6 @@
     <div id="sidebar">
         <h2>Upcoming Features/Games:</h2>
 		<ul style="list-style-type: dot; list-style-position: inside;">
-            <li>Snake Game - Night Mode</li>
             <li>Breakout Game</li>
             <li>Galactic Shootout Game</li>
 		</ul>
@@ -104,8 +106,12 @@
             <div id="game">
                 <canvas id="gameCanvas">
                 </canvas>
-                <script type="text/javascript" src="js-files/snake.js"></script>
+                <script>
+                main("game");
+                </script>
             </div>
+            <button type="button" class="gameButton" onclick="pauseGame();">Pause Game</button>
+            <input type="button" id="nightMode" onclick="toggleNightMode();" value="NightMode - Off">
         </div>
         <h6>How I Made It (The YouTube tutorial I watched): <a href="https://www.youtube.com/watch?v=uU5YPIvJ24Y" target="_blank" style="text-decoration: underline; color: #98fb98;">https://www.youtube.com/watch?v=uU5YPIvJ24Y</a><h6>
         <br>
