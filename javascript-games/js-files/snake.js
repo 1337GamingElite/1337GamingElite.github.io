@@ -7,7 +7,7 @@ var EMPTY = 0, SNAKE = 1, FRUIT = 2;
 // Direction
 var LEFT  = 0, UP = 1, RIGHT = 2, DOWN = 3;
 
-// Keys
+// Keys (WASD)
 var KEY_LEFT = 65, KEY_UP = 87, KEY_RIGHT = 68, KEY_DOWN = 83, PAUSE_KEY = 80;
 
 // Game Variables
@@ -114,6 +114,7 @@ function main(id) {
 function init() {
 	score = 0;
     pauseCount = 3;
+	snake.direction = UP;
 	grid.init(EMPTY, COLS, ROWS);
 	var sp = {x:Math.floor(COLS/2), y:ROWS-5};
 	snake.init(UP, sp.x, sp.y);
