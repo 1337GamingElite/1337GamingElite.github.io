@@ -29,10 +29,18 @@ header {
 }
 
 header img {
-    margin: auto;
+	margin: auto;
     display: block;
-    max-width: 100%;
+	max-width: 100%;
     height: auto;
+	animation: headerAnim 10s infinite linear;
+}
+
+
+@keyframes headerAnim {
+	0% {filter: hue-rotate(0deg);}
+	50% {filter: hue-rotate(360deg);}
+	100% {filter: hue-rotate(0deg);}
 }
 
 nav ul {
